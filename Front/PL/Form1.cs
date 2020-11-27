@@ -87,6 +87,7 @@ namespace PL
 
                 Form2 form2 = new Form2();
                 form2.label1f2.Text = "Tu saldo es: " + saldo;
+                form2.labelsaldo.Text =Convert.ToString(saldo);
                 form2.label2.Text = textBox1.Text;
                 form2.ShowDialog();
                 
@@ -110,6 +111,21 @@ namespace PL
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            this.Hide();
+
+
+            Form5 form5 = new Form5();
+            form5.ShowDialog();
+
+            this.Show();
+
+
 
         }
     }

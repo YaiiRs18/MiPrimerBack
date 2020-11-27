@@ -72,5 +72,27 @@ namespace PL
             this.Close();
             this.Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            if (comboBox1.Text == "Con Tarjeta")
+            {
+                Form2 form2 = new Form2();
+                this.Hide();
+
+
+                Form5 form5 = new Form5();
+                form5.label6.Text = label2.Text;
+                form5.label7.Text = labelsaldo.Text;
+
+                form5.ShowDialog();
+                this.Close();
+                this.Hide();
+
+
+            }
+
+        }
     } 
 }
