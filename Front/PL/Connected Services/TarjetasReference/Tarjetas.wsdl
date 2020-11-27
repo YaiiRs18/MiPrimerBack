@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Tarjetas" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ML.Entities" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SL" />
+      <xs:element name="GetNip">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ML.Entities" minOccurs="0" name="tarjetas" nillable="true" type="q1:Tarjetas" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetNipResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SL" minOccurs="0" name="GetNipResult" nillable="true" type="q2:TarjetasResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSaldo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ML.Entities" minOccurs="0" name="tarjetas" nillable="true" type="q3:Tarjetas" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSaldoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SL" minOccurs="0" name="GetSaldoResult" nillable="true" type="q4:TarjetasResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateRe">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ML.Entities" minOccurs="0" name="tarjetas" nillable="true" type="q5:Tarjetas" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateReResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SL" minOccurs="0" name="UpdateReResult" nillable="true" type="q6:TarjetasResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ML.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ML.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Tarjetas">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Clientes" nillable="true" type="tns:Clientes" />
+          <xs:element minOccurs="0" name="IdTarjetas" type="xs:int" />
+          <xs:element minOccurs="0" name="Nip" type="xs:int" />
+          <xs:element minOccurs="0" name="NoCuenta" type="xs:int" />
+          <xs:element minOccurs="0" name="NoTarjeta" type="xs:int" />
+          <xs:element minOccurs="0" name="Saldo" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Tarjetas" nillable="true" type="tns:Tarjetas" />
+      <xs:complexType name="Clientes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amaterno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Apaterno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdClientes" type="xs:int" />
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Clientes" nillable="true" type="tns:Clientes" />
+      <xs:complexType name="ArrayOfTarjetas">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Tarjetas" nillable="true" type="tns:Tarjetas" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfTarjetas" nillable="true" type="tns:ArrayOfTarjetas" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SL" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ML.Entities" />
+      <xs:complexType name="TarjetasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" type="xs:int" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ML.Entities" minOccurs="0" name="TarjetasList" nillable="true" type="q1:ArrayOfTarjetas" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TarjetasResponse" nillable="true" type="tns:TarjetasResponse" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ITarjetas_GetNip_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNip" />
+  </wsdl:message>
+  <wsdl:message name="ITarjetas_GetNip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNipResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITarjetas_GetSaldo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSaldo" />
+  </wsdl:message>
+  <wsdl:message name="ITarjetas_GetSaldo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSaldoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITarjetas_UpdateRe_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRe" />
+  </wsdl:message>
+  <wsdl:message name="ITarjetas_UpdateRe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITarjetas">
+    <wsdl:operation name="GetNip">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITarjetas/GetNip" message="tns:ITarjetas_GetNip_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITarjetas/GetNipResponse" message="tns:ITarjetas_GetNip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSaldo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITarjetas/GetSaldo" message="tns:ITarjetas_GetSaldo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITarjetas/GetSaldoResponse" message="tns:ITarjetas_GetSaldo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITarjetas/UpdateRe" message="tns:ITarjetas_UpdateRe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITarjetas/UpdateReResponse" message="tns:ITarjetas_UpdateRe_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITarjetas" type="tns:ITarjetas">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNip">
+      <soap:operation soapAction="http://tempuri.org/ITarjetas/GetNip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaldo">
+      <soap:operation soapAction="http://tempuri.org/ITarjetas/GetSaldo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRe">
+      <soap:operation soapAction="http://tempuri.org/ITarjetas/UpdateRe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Tarjetas">
+    <wsdl:port name="BasicHttpBinding_ITarjetas" binding="tns:BasicHttpBinding_ITarjetas">
+      <soap:address location="http://localhost:50087/Tarjetas.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
