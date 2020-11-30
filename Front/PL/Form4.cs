@@ -86,9 +86,18 @@ namespace PL
                 Form2 form2 = new Form2();
                 form2.label1f2.Text = "Tu saldo es: " + saldo;
                 form2.label2.Text = label2.Text;
+
                 form2.ShowDialog();
 
                 this.Show();
+
+            }
+            else if(request.Code == 50)
+            {
+
+                label4.Visible = true;
+                label4.Text = "Nip Incorrecto";
+
 
             }
         }

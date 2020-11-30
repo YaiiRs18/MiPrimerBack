@@ -25,9 +25,12 @@ namespace PL
         private void button1_Click(object sender, EventArgs e)
         {
 
-            
+
             if (textBox1.Text != "" && textBox2.Text != "")
-            {
+            { 
+
+                if (Titulo.Text == "Pago de Agua")
+             {
                 if (label3.Text != "")
                 {
                     int Saldo = Convert.ToInt32(textBox2.Text);
@@ -85,6 +88,193 @@ namespace PL
                     {
                         MessageBox.Show(requestadd.Message);
                     }
+                }
+            }
+                else if (Titulo.Text == "Pago de Luz")
+                {
+                    if (label3.Text != "")
+                    {
+                        int Saldo = Convert.ToInt32(textBox2.Text);
+                        TarjetasReference.Tarjetas tarjetas1 = new TarjetasReference.Tarjetas();
+                        TarjetasReference.TarjetasClient tarjetas = new TarjetasReference.TarjetasClient();
+
+
+                        tarjetas1.Saldo = Saldo;
+                        tarjetas1.NoTarjeta = Convert.ToInt32(label3.Text);
+                        var request = tarjetas.UpdateRe(tarjetas1);
+
+                        if (request.Code == 100)
+                        {
+                            PagosReference1.PagosClient pagoservicio = new PagosReference1.PagosClient();
+                            PagosReference1.Pagos pagos = new PagosReference1.Pagos();
+                            pagos.Monto = Convert.ToInt32(textBox2.Text);
+                            pagos.Referencia = Convert.ToString(textBox1.Text);
+                            pagos.Servicios = new PagosReference1.Servicios();
+                            pagos.Servicios.IdServicios = 2;
+
+                            var requestadd = pagoservicio.GetPagos(pagos);
+                            if (requestadd.Code == 100)
+                            {
+                                MessageBox.Show("Operacion Exitosa");
+                            }
+                            else
+                            {
+                                MessageBox.Show(requestadd.Message);
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(request.Message);
+                        }
+
+
+
+                    }
+                    else
+                    {
+                        PagosReference1.PagosClient pagoservicio = new PagosReference1.PagosClient();
+                        PagosReference1.Pagos pagos = new PagosReference1.Pagos();
+                        pagos.Monto = Convert.ToInt32(textBox2.Text);
+                        pagos.Referencia = Convert.ToString(textBox1.Text);
+                        pagos.Servicios = new PagosReference1.Servicios();
+                        pagos.Servicios.IdServicios = 2;
+
+                        var requestadd = pagoservicio.GetPagos(pagos);
+                        if (requestadd.Code == 100)
+                        {
+                            MessageBox.Show("Operacion Exitosa");
+                        }
+                        else
+                        {
+                            MessageBox.Show(requestadd.Message);
+                        }
+                    }
+
+                }
+                else if (Titulo.Text == "Pago de Telefono")
+                {
+                    if (label3.Text != "")
+                    {
+                        int Saldo = Convert.ToInt32(textBox2.Text);
+                        TarjetasReference.Tarjetas tarjetas1 = new TarjetasReference.Tarjetas();
+                        TarjetasReference.TarjetasClient tarjetas = new TarjetasReference.TarjetasClient();
+
+
+                        tarjetas1.Saldo = Saldo;
+                        tarjetas1.NoTarjeta = Convert.ToInt32(label3.Text);
+                        var request = tarjetas.UpdateRe(tarjetas1);
+
+                        if (request.Code == 100)
+                        {
+                            PagosReference1.PagosClient pagoservicio = new PagosReference1.PagosClient();
+                            PagosReference1.Pagos pagos = new PagosReference1.Pagos();
+                            pagos.Monto = Convert.ToInt32(textBox2.Text);
+                            pagos.Referencia = Convert.ToString(textBox1.Text);
+                            pagos.Servicios = new PagosReference1.Servicios();
+                            pagos.Servicios.IdServicios = 3;
+
+                            var requestadd = pagoservicio.GetPagos(pagos);
+                            if (requestadd.Code == 100)
+                            {
+                                MessageBox.Show("Operacion Exitosa");
+                            }
+                            else
+                            {
+                                MessageBox.Show(requestadd.Message);
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(request.Message);
+                        }
+
+
+
+                    }
+                    else
+                    {
+                        PagosReference1.PagosClient pagoservicio = new PagosReference1.PagosClient();
+                        PagosReference1.Pagos pagos = new PagosReference1.Pagos();
+                        pagos.Monto = Convert.ToInt32(textBox2.Text);
+                        pagos.Referencia = Convert.ToString(textBox1.Text);
+                        pagos.Servicios = new PagosReference1.Servicios();
+                        pagos.Servicios.IdServicios = 3;
+
+                        var requestadd = pagoservicio.GetPagos(pagos);
+                        if (requestadd.Code == 100)
+                        {
+                            MessageBox.Show("Operacion Exitosa");
+                        }
+                        else
+                        {
+                            MessageBox.Show(requestadd.Message);
+                        }
+                    }
+
+                }
+                else if (Titulo.Text == "Pago de Cable")
+                {
+                    if (label3.Text != "")
+                    {
+                        int Saldo = Convert.ToInt32(textBox2.Text);
+                        TarjetasReference.Tarjetas tarjetas1 = new TarjetasReference.Tarjetas();
+                        TarjetasReference.TarjetasClient tarjetas = new TarjetasReference.TarjetasClient();
+
+
+                        tarjetas1.Saldo = Saldo;
+                        tarjetas1.NoTarjeta = Convert.ToInt32(label3.Text);
+                        var request = tarjetas.UpdateRe(tarjetas1);
+
+                        if (request.Code == 100)
+                        {
+                            PagosReference1.PagosClient pagoservicio = new PagosReference1.PagosClient();
+                            PagosReference1.Pagos pagos = new PagosReference1.Pagos();
+                            pagos.Monto = Convert.ToInt32(textBox2.Text);
+                            pagos.Referencia = Convert.ToString(textBox1.Text);
+                            pagos.Servicios = new PagosReference1.Servicios();
+                            pagos.Servicios.IdServicios = 4;
+
+                            var requestadd = pagoservicio.GetPagos(pagos);
+                            if (requestadd.Code == 100)
+                            {
+                                MessageBox.Show("Operacion Exitosa");
+                            }
+                            else
+                            {
+                                MessageBox.Show(requestadd.Message);
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(request.Message);
+                        }
+
+
+
+                    }
+                    else
+                    {
+                        PagosReference1.PagosClient pagoservicio = new PagosReference1.PagosClient();
+                        PagosReference1.Pagos pagos = new PagosReference1.Pagos();
+                        pagos.Monto = Convert.ToInt32(textBox2.Text);
+                        pagos.Referencia = Convert.ToString(textBox1.Text);
+                        pagos.Servicios = new PagosReference1.Servicios();
+                        pagos.Servicios.IdServicios = 4;
+
+                        var requestadd = pagoservicio.GetPagos(pagos);
+                        if (requestadd.Code == 100)
+                        {
+                            MessageBox.Show("Operacion Exitosa");
+                        }
+                        else
+                        {
+                            MessageBox.Show(requestadd.Message);
+                        }
+                    }
+
                 }
 
 
